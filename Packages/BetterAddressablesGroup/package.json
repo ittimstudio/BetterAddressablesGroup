@@ -1,0 +1,22 @@
+{
+  "name": "com.ittimstudio.better_addressables_group",
+  "version": "1.0.0",
+  "displayName": "Better Addressables Group",
+  "description": "Better Addressables Group window",
+  "unity": "2020.3",
+  "documentationUrl": "https://github.com/ittimstudio/BetterAddressablesGroup",
+  "changelogUrl": "https://github.com/ittimstudio/BetterAddressablesGroup/blob/main/CHANGELOG.md",
+  "licensesUrl": "https://github.com/ittimstudio/BetterAddressablesGroup/blob/main/LICENSE",
+  "dependencies": {
+    "com.unity.addressables": "1.18.19",
+    "com.unity.nuget.newtonsoft-json": "2.0.2"
+  },
+  "keywords": [
+    "Addressables",
+    "Editor"
+  ],
+  "author": {
+    "name": "KevinZhu",
+    "email": "ittimstudio@gmail.com"
+  }
+}
