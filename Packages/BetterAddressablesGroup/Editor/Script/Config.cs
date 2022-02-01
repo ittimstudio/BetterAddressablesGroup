@@ -9,6 +9,7 @@ namespace BetterAddressablesGroup.Editor
     {
         #region fields
         public string Version = @"1.0.0";
+        public string GroupSeprarator = @"_";
         #endregion
 
         #region variable

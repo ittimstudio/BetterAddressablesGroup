@@ -13,7 +13,7 @@ namespace BetterAddressablesGroup.Editor
         public static void Open()
         {
             Config.Reload();
-            Debug.Log(Config.Instance.Version);
+            EditorWindow.GetWindow<GroupsWindow>(@"BetterAddressables");
         }
     }
 }
