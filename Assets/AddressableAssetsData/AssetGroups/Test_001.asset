@@ -1,0 +1,45 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
+  m_Name: Test_001
+  m_EditorClassIdentifier: 
+  m_GroupName: Test_001
+  m_Data:
+    m_SerializedData: []
+  m_GUID: 08df6186d2498447f8367ddd90c6fb3e
+  m_SerializeEntries:
+  - m_GUID: 4474d2218d1233d4d9d99a809b49554b
+    m_Address: character_carry
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 43eb704c8d3f4f02b188c5988c58b4fb
+    m_Address: character_crawl
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: b9998a0d16f84a57a88683adbfce9aea
+    m_Address: character_duck
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 7adb3002b143465ca80d83e1b71af788
+    m_Address: character_gun
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 89d0d2c995a54eb2a3cb02091a983efd
+    m_Address: character_hammer
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  m_ReadOnly: 0
+  m_Settings: {fileID: 11400000, guid: 663f6666ca7164bb6932ee733263a3b3, type: 2}
+  m_SchemaSet:
+    m_Schemas:
+    - {fileID: 11400000, guid: 34eb7f82c37ce462585c8bd4de2f71a8, type: 2}
+    - {fileID: 11400000, guid: ea1d18227f4a74a968871d4c07800e54, type: 2}

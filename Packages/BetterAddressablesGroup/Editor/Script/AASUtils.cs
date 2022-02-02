@@ -2,7 +2,7 @@ namespace BetterAddressablesGroup.Editor
 {
     using System;
     using System.Linq;
-    using System.Collections;
+    using System.Diagnostics;
     using System.Collections.Generic;
     using UnityEngine;
     using UnityEditor.AddressableAssets;
@@ -29,23 +29,22 @@ namespace BetterAddressablesGroup.Editor
         {
             if (!IsAASInited) { return new List<TreeViewItem>(); }
 
-            var beginDepth = 1;
+            var sw = Stopwatch.StartNew();
+            var beginDepth = 0;
             var resultList = new List<TreeViewItem>();
             var dic = new Dictionary<(int id, int depth, string displayName), TreeViewItem>();
-            var sp = new string[] { Config.Instance.GroupSeprarator };
-            var pathID = -1;
 
             foreach (var g in AASSettings.groups)
             {
-                var nameArray = g.Name.Split(sp, StringSplitOptions.None);
-                AddGroupItems(g, nameArray);
+                AddGroupItems(g, g.Name.ToNameArray());
             }
-            
+
+            Log($"Reload spend > {sw.ElapsedMilliseconds} ms");
             return resultList;
 
             void AddGroupItem(AddressableAssetGroup group, int depth, string displayName)
             {
-                var key = (GroupTreeViewItem.GenerateID(group), depth, displayName);
+                var key = (group.Guid.GetHashCode(), depth, displayName);
 
                 if (dic.ContainsKey(key)) { return; }
 
@@ -53,21 +52,20 @@ namespace BetterAddressablesGroup.Editor
                 resultList.Add(dic[key]);
             }
 
-            void AddPathItem(int depth, string displayName)
+            void AddPathItem(int depth, string[] nameArr, int nIndex)
             {
-                var key = (pathID, depth, displayName);
+                var keyElement = nameArr.GetPathKeyElement(nIndex);
+                var key = (keyElement.id, depth, keyElement.displayName);
 
                 if (dic.ContainsKey(key)) { return; }
 
-                dic[key] = new PathTreeViewItem(pathID, depth, displayName);
+                dic[key] = new PathTreeViewItem(depth, nameArr, nIndex);
                 resultList.Add(dic[key]);
-
-                pathID -= 1;
             }
 
             void AddEntryItem(AddressableAssetEntry entry, int depth)
             {
-                var key = (EntryTreeViewItem.GenerateID(entry), depth, entry.address);
+                var key = (entry.guid.GetHashCode(), depth, entry.address);
 
                 if (dic.ContainsKey(key)) { return; }
 
@@ -86,7 +84,7 @@ namespace BetterAddressablesGroup.Editor
 
                     if (!isLast)
                     {
-                        AddPathItem(depth, n);
+                        AddPathItem(depth, displayNames, i);
                     }
                     else
                     {
@@ -105,6 +103,17 @@ namespace BetterAddressablesGroup.Editor
                 }
             }
             
+        }
+
+        public static string[] ToNameArray(this string completeName)
+            => completeName.Split(new string[] { Config.Instance.GroupSeprarator }, StringSplitOptions.None);
+
+        public static (int id, string displayName) GetPathKeyElement(this string[] strArray, int index)
+        {
+            var subArr = strArray.Take(index + 1);
+            var id = string.Join(Config.Instance.GroupSeprarator, subArr).GetHashCode();
+            var displayName = strArray[index];
+            return (id, displayName);
         }
 
         public static bool GetIsExpanded(this AddressableAssetGroup group, bool defaultValue = false)

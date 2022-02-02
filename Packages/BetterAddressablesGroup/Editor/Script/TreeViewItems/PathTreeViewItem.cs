@@ -3,15 +3,17 @@ namespace BetterAddressablesGroup.Editor
     using System.Collections;
     using System.Collections.Generic;
     using UnityEngine;
+    using UnityEditor.AddressableAssets.Settings;
     using UnityEditor.IMGUI.Controls;
 
     public sealed class PathTreeViewItem : TreeViewItem
-    {
-        public PathTreeViewItem(int id, int depth, string displayName)
+    {        
+        public PathTreeViewItem(int depth, string[] pathNameArray, int pathNameIndex)
         {
-            this.id = id;
+            var keyElement = pathNameArray.GetPathKeyElement(pathNameIndex);
+            id = keyElement.id;
             this.depth = depth;
-            this.displayName = displayName;
+            displayName = keyElement.displayName;
         }
     }
 }

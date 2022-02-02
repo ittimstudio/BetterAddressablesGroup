@@ -1,0 +1,145 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
+  m_Name: Test_Texture_0001
+  m_EditorClassIdentifier: 
+  m_GroupName: Test_Texture_0001
+  m_Data:
+    m_SerializedData: []
+  m_GUID: cf3ff15600b6d44a4b0dcc1f92f00689
+  m_SerializeEntries:
+  - m_GUID: 410a682b748d49d5b553923210776e64
+    m_Address: character_bow
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 42a0d4a0cdde425a930dc5ae1c3f64ad
+    m_Address: character_hit1
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: aaa807840a4943e79b5aa0802ee18d99
+    m_Address: character_hit2
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: bdcf20ae532f4ef88d3b429b880553e3
+    m_Address: character_hold
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 9c447c54c8e0416e9446cadb88c48fd3
+    m_Address: character_idle
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 263bbf868f1c40ef9da04b8d96ce8d7b
+    m_Address: character_jump
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 123d54a09b5e49a7b77ca17b4009834c
+    m_Address: character_rifle
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: acb8cab598694f619dd44693cb68fb4e
+    m_Address: character_run
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 38259642eea83c740b18225fcc6afcb8
+    m_Address: character_slide
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 15eb07192dee43dcb169478da3b487d0
+    m_Address: character_sword
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 2cd92e9f32354f3c924b9ba0617cfbd3
+    m_Address: character_sycthe
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: bb842fe46e994e6b903ffa8af9ae0f36
+    m_Address: character_throw
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 37db6fd26ee44919bffee8a330bd9f5d
+    m_Address: character_vanish
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 3d2f599474fd4b2994881f42880ea8c6
+    m_Address: character_walk
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 6cd198aefcb544d6aa5f8f37be4f872a
+    m_Address: weapon_bow
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: abb480a6baaf485c81c17a7f3c4fdc42
+    m_Address: weapon_gun
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 626be61ea46848f48841509c5271e64f
+    m_Address: weapon_hammer
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 23d536d6083344698e17aa8fc049b99f
+    m_Address: weapon_rifle
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: a1925e7d73214f63a8ddcce6bea40954
+    m_Address: weapon_sword
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 859caa1337f1497c857b71771e7c5295
+    m_Address: weapon_sycthe
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 32fc46fa3f0e8b349b777fc008066ece
+    m_Address: world_arrow_basic
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: a3ebf609d64354b47bd06cdd94098ebc
+    m_Address: world_bomb_carry
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 9f30f35184729d64e9778f3a861945dc
+    m_Address: world_bomb_explosion
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 9c6314050d870a4409074e27c5e79132
+    m_Address: world_bomb_ground
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 09c6bf1cbce9be746b148f6019fd6750
+    m_Address: world_bomb_hold
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 30edb9d12883df642bcb8b4f9bb0c3da
+    m_Address: world_bullets
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 0ece8860f6ff7b949bcc603e99fefe92
+    m_Address: world_desert
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 9cfbb362323bfad4eb88e48d04d8a2a7
+    m_Address: world_muzzleflash
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 2defedf49c8d4511b29c6bc028880008
+    m_Address: world_player_shadow
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: c94c2e2b9bf12ca4680516aeed0708df
+    m_Address: world_wood_barrier
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  m_ReadOnly: 0
+  m_Settings: {fileID: 11400000, guid: 663f6666ca7164bb6932ee733263a3b3, type: 2}
+  m_SchemaSet:
+    m_Schemas:
+    - {fileID: 11400000, guid: 3d25cbd7f141c4fe98c2711c2bf9d952, type: 2}
+    - {fileID: 11400000, guid: f0672da8a53954ab28c1da50f427a6d5, type: 2}

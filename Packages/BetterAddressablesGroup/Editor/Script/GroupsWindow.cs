@@ -4,12 +4,22 @@ namespace BetterAddressablesGroup.Editor
     using System.Collections.Generic;
     using UnityEngine;
     using UnityEditor;
+    using UnityEditor.IMGUI.Controls;
     using static AASUtils;
 
     internal sealed class GroupsWindow : EditorWindow
     {
         [SerializeField]
         private Vector2 contentScrollPos;
+
+        [SerializeField]
+        private TreeViewState treeViewState;
+
+        [SerializeField]
+        private MultiColumnHeaderState headerState;
+
+        private TreeView treeView;
+        private MultiColumnHeader header;
 
 #if !UNITY_EDITOR_OSX
         private float ScreenW => Screen.width;
@@ -19,6 +29,18 @@ namespace BetterAddressablesGroup.Editor
         private float ScreenH => Screen.height * 0.5f;
 #endif
 
+        private void OnEnable()
+        {
+            if (headerState == null)
+            {
+                treeViewState = new TreeViewState();
+                headerState = AddressablesTreeView.CreateDefaultMultiColumnHeaderState(ScreenW - 50f);
+            }
+
+            header = new MultiColumnHeader(headerState);
+            treeView = new AddressablesTreeView(treeViewState, null);
+            treeView.Reload();
+        }
 
         public void OnGUI()
         {
@@ -33,6 +55,13 @@ namespace BetterAddressablesGroup.Editor
                 if (GUILayout.Button(@"Function", EditorStyles.toolbarButton, GUILayout.Width(60f)))
                 {
                 }
+
+                GUILayout.FlexibleSpace();
+
+                if (GUILayout.Button(@"Reload", EditorStyles.toolbarButton, GUILayout.Width(50f)))
+                {
+                    treeView.Reload();
+                }
             }
             EditorGUILayout.EndHorizontal();
         }
@@ -44,10 +73,11 @@ namespace BetterAddressablesGroup.Editor
                 return;
             }
 
-            EditorGUILayout.BeginVertical(EditorStyles.helpBox);
+            EditorGUILayout.BeginVertical();
             contentScrollPos = EditorGUILayout.BeginScrollView(contentScrollPos);
             {
-                
+                var rect = new Rect(0f, 0f, position.width, position.height);
+                treeView.OnGUI(rect);
             }
             EditorGUILayout.EndScrollView();
             EditorGUILayout.EndVertical();
@@ -70,9 +100,9 @@ namespace BetterAddressablesGroup.Editor
 
                     EditorGUILayout.Space(gap);
                     EditorGUILayout.BeginHorizontal();
-                    GUILayout.Box(@"", GUILayout.Width(gap), GUILayout.Height(gap));
+                    EditorGUILayout.Space(gap);
                     GUILayout.Label(msg, EditorStyles.whiteLargeLabel, GUILayout.Width(w), GUILayout.Height(ScreenH));
-                    GUILayout.Box(@"", GUILayout.Width(gap), GUILayout.Height(gap));
+                    EditorGUILayout.Space(gap);
                     EditorGUILayout.EndHorizontal();
 
                     EditorStyles.whiteLargeLabel.wordWrap = oriLabelWordWarp;
